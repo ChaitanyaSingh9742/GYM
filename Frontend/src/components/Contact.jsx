@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
+import axios from "axios";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -13,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      toast.error("Please provide all details");
+      toast.error(error.response.data.message);
       return;
     }
 
@@ -32,11 +33,18 @@ const Contact = () => {
         templateParams,
         "LLIuBLLtpfqS5eDsJ"
       );
-
+      const { data } = await axios.post(
+      "https://gym-backend-7umm.onrender.com/send/mail",
+      templateParams,
+        {
+        withCredentials: true,
+        headers: { "Content-Type": "application/json" },
+        }
+        );
       setName("");
       setEmail("");
       setMessage("");
-      toast.success("Message sent successfully!");
+      toast.success(data.message);
       setLoading(false);
     } catch (error) {
       setLoading(false);
