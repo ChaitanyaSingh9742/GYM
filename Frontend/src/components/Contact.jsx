@@ -35,14 +35,14 @@ const Contact = () => {
         "LLIuBLLtpfqS5eDsJ"
       );
 
-      const { data } = await axios.post(
+      /*const { data } = await axios.post(
         "https://gym-backend-7umm.onrender.com/send/mail",
         templateParams,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
-      );
+      );*/
 
       setName("");
       setEmail("");
