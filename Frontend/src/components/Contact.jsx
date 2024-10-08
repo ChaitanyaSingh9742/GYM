@@ -27,6 +27,7 @@ const Contact = () => {
     };
 
     try {
+ 
       await emailjs.send(
         "service_gegbcal",
         "template_hxb978v",
@@ -46,7 +47,7 @@ const Contact = () => {
       setName("");
       setEmail("");
       setMessage("");
-      toast.success("Message sent successfully!");
+      toast.success(data.message);
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
     } finally {
@@ -100,4 +101,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

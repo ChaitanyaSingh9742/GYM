@@ -21,27 +21,32 @@ app.use(express.urlencoded({ extended: true }));
 
 router.post("/send/mail", async (req, res) => {
   const { name, email, message } = req.body;
+
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
-      message: "Please provide all details",
+      message: "Please provide all details.",
     });
   }
+
   try {
+
     await sendEmail({
       email: "chaitanya.singh9742@gmail.com",
-      subject: "FitKingdom CONTACT",
+      subject: "FitKingdom CONTACT - Copy",
       message,
       userEmail: email,
     });
+
     res.status(200).json({
       success: true,
-      message: "Message Sent Successfully.",
+      message: "Message logged successfully. We will get back to you shortly.",
     });
   } catch (error) {
+    console.error("Error logging email:", error);
     res.status(500).json({
       success: false,
-      message: "Internal Server Error",
+      message: "Failed to log message. Please try again later.",
     });
   }
 });
