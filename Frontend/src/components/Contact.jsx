@@ -11,6 +11,12 @@ const Contact = () => {
 
   const sendMail = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !message) {
+      toast.error("Please provide all details");
+      return;
+    }
+
     setLoading(true);
 
     const templateParams = {
