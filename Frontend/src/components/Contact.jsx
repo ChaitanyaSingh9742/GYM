@@ -14,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      toast.error(error.response.data.message);
+      toast.error("Please provide all details.");
       return;
     }
 
@@ -33,22 +33,24 @@ const Contact = () => {
         templateParams,
         "LLIuBLLtpfqS5eDsJ"
       );
+
       const { data } = await axios.post(
-      "https://gym-backend-7umm.onrender.com/send/mail",
-      templateParams,
+        "https://gym-backend-7umm.onrender.com/send/mail",
+        templateParams,
         {
-        withCredentials: true,
-        headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
         }
-        );
+      );
+
       setName("");
       setEmail("");
       setMessage("");
       toast.success(data.message);
-      setLoading(false);
     } catch (error) {
-      setLoading(false);
       toast.error("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -98,3 +100,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
