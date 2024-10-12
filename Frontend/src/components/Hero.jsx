@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Hero = () => {
+  const pricingRef = useRef(null);
+  const bmiCalculatorRef = useRef(null);
+
+  const scrollToPricing = () => {
+    pricingRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToBMICalculator = () => {
+    bmiCalculatorRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="hero">
       <div className="content">
@@ -14,8 +25,8 @@ const Hero = () => {
           <p>Unleash the Power Within – Your Fitness Journey Begins Now</p>
         </div>
         <div className="buttons">
-          <button>Start Your Journey</button>
-          <button>Discover Your Plan</button>
+          <button onClick={scrollToPricing}>Discover Our Plans</button>
+          <button onClick={scrollToBMICalculator}>Calculate Your BMI</button>
         </div>
       </div>
     </section>
@@ -23,3 +34,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

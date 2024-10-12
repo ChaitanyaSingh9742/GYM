@@ -1,5 +1,5 @@
-import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useRef } from "react";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
@@ -13,15 +13,23 @@ import BMICalculator from "./components/BMICalculator";
 import Footer from "./components/Footer";
 
 const App = () => {
+  
+  const pricingRef = useRef(null);
+  const bmiCalculatorRef = useRef(null);
+
   return (
     <Router>
       <Navbar />
-      <Hero />
+      <Hero pricingRef={pricingRef} bmiCalculatorRef={bmiCalculatorRef} />
       <WorkoutSessions />
       <Gallery />
-      <Pricing />
+      <div ref={pricingRef}>
+        <Pricing />
+      </div>
       <Contact />
-      <BMICalculator />
+      <div ref={bmiCalculatorRef}>
+        <BMICalculator />
+      </div>
       <Footer />
       <ToastContainer theme="dark" position="top-center" />
     </Router>
