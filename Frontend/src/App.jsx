@@ -24,7 +24,6 @@ const App = () => {
         <Route path="/bmi-calculator" element={<BMICalculator />} />
       </Routes>
       <Contact />
-      <BMICalculator />
       <Footer />
       <ToastContainer theme="dark" position="top-center" />
     </Router>
