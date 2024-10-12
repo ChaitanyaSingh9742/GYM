@@ -1,17 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const navigate = useNavigate();
-
-  const handleBMICalculatorClick = () => {
-    navigate("/bmi-calculator");
-  };
-
-  const handlePricingClick = () => {
-    navigate("/pricing");
-  };
-
   return (
     <section className="hero">
       <div className="content">
@@ -25,8 +14,8 @@ const Hero = () => {
           <p>Unleash the Power Within – Your Fitness Journey Begins Now</p>
         </div>
         <div className="buttons">
-          <button onClick={handleBMICalculatorClick}>Calculate Your BMI</button>
-          <button onClick={handlePricingClick}>Discover Our Plan</button>
+          <button>Start Your Journey</button>
+          <button>Discover Your Plan</button>
         </div>
       </div>
     </section>
@@ -34,4 +23,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
