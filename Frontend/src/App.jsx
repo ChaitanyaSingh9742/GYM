@@ -13,7 +13,6 @@ import BMICalculator from "./components/BMICalculator";
 import Footer from "./components/Footer";
 
 const App = () => {
-  
   const pricingRef = useRef(null);
   const bmiCalculatorRef = useRef(null);
 
@@ -23,11 +22,11 @@ const App = () => {
       <Hero pricingRef={pricingRef} bmiCalculatorRef={bmiCalculatorRef} />
       <WorkoutSessions />
       <Gallery />
-      <div ref={pricingRef}>
+      <div ref={pricingRef} className="pricing-section">
         <Pricing />
       </div>
       <Contact />
-      <div ref={bmiCalculatorRef}>
+      <div ref={bmiCalculatorRef} className="bmi-calculator-section">
         <BMICalculator />
       </div>
       <Footer />
@@ -37,3 +36,4 @@ const App = () => {
 };
 
 export default App;
+

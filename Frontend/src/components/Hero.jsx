@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 
-const Hero = () => {
-  const pricingRef = useRef(null);
-  const bmiCalculatorRef = useRef(null);
+const Hero = ({ pricingRef, bmiCalculatorRef }) => {
 
   const scrollToPricing = () => {
     pricingRef.current.scrollIntoView({ behavior: 'smooth' });
