@@ -20,8 +20,8 @@ const App = () => {
       <WorkoutSessions />
       <Gallery />
       <Routes>
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/bmi-calculator" element={<BMICalculator />} />
+        <Route path="./components/Pricing" element={<Pricing />} />
+        <Route path="./components/BMICalculator" element={<BMICalculator />} />
       </Routes>
       <Contact />
       <Footer />

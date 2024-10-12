@@ -5,11 +5,11 @@ const Hero = () => {
   const navigate = useNavigate();
 
   const handleBMICalculatorClick = () => {
-    navigate("/bmi-calculator");
+    navigate("/BMICalculator");
   };
 
   const handlePricingClick = () => {
-    navigate("/pricing");
+    navigate("/Pricing");
   };
 
   return (
