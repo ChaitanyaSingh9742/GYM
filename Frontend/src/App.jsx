@@ -23,7 +23,6 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/bmi-calculator" element={<BMICalculator />} />
       </Routes>
-      <Pricing />
       <Contact />
       <BMICalculator />
       <Footer />
