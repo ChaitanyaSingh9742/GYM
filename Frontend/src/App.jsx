@@ -23,7 +23,9 @@ const App = () => {
         <Route path="./components/Pricing" element={<Pricing />} />
         <Route path="./components/BMICalculator" element={<BMICalculator />} />
       </Routes>
+      <Pricing />
       <Contact />
+      <BMICalculator />
       <Footer />
       <ToastContainer theme="dark" position="top-center" />
     </Router>
