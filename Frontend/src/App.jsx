@@ -1,5 +1,5 @@
 import React from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -20,8 +20,8 @@ const App = () => {
       <WorkoutSessions />
       <Gallery />
       <Routes>
-        <Route path="./components/Pricing" element={<Pricing />} />
-        <Route path="./components/BMICalculator" element={<BMICalculator />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/bmi-calculator" element={<BMICalculator />} />
       </Routes>
       <Pricing />
       <Contact />
@@ -33,3 +33,4 @@ const App = () => {
 };
 
 export default App;
+
